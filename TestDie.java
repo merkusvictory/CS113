@@ -5,17 +5,9 @@
 public class TestDie {
     public static void main (String[] args) {
         Die die1 = new Die();
-        // constructor for die
+        Die die2 = new Die();
+        MyMethods count_obj = new MyMethods();
 
-        System.out.println(die1);
-        // print address of die1 in memory
-        System.out.println(die1.getFaceValue()); // default val
-        die1.roll();
-        System.out.println(die1.getFaceValue());
-
-        Die die2 = new Die(4);
-        System.out.println(die2.getFaceValue());
-
-        System.out.println(die1 + "\n" + die2.toString());
+        System.out.println("Number of attempts: " + count_obj.diceStats(die1, die2));
     }
 }

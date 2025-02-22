@@ -32,4 +32,19 @@ public class Die {
     public void setFaceValue(int newFace) {
         faceValue = newFace;
     }
+
+    // equals method
+    public boolean equals(Die d2) {
+        return faceValue == d2.faceValue;
+    }
+
+    // compareTo method
+    public int compareTo(Die d2) {
+        if (faceValue < d2.faceValue)
+            return -1;
+        else if (faceValue > d2.faceValue)
+            return 1;
+        else
+            return 0;
+    }
 }
