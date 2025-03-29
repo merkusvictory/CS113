@@ -1,6 +1,5 @@
 package homework.HW6;
 import java.util.Random;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class TestArrays {
