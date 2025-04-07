@@ -1,5 +1,3 @@
-package review;
-
 import java.util.Scanner;
 public class CircleTest
 {

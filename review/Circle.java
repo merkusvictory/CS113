@@ -1,5 +1,3 @@
-package review;
-
 public class Circle
 {
     private Point center;

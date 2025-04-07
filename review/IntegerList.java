@@ -1,5 +1,3 @@
-package review;
-
 public class IntegerList {
     private int[] list;
 

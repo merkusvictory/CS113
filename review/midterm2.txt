@@ -173,3 +173,84 @@ public class Player {
 
 
 Practice Test 3
+1. d /
+2. c /
+3. c /
+4. e /
+5. b /
+6. a /
+7. d x e
+8. b /
+9. a / 
+10. c /
+
+11.
+public class GPA
+{
+    private double value;
+
+    public GPA(double value)
+    { this.value =value;}
+
+    public double getValue()
+    { return value;}
+
+    public int compareTo(GPA other){
+        if (this.value <other.value)
+            return -1;
+        else if (this.value==other.value)
+            return 0;
+        else
+            return 1;
+    }
+
+    public String toString()
+    { return Double.toString(value);}
+}
+
+public class Student {
+    private String name;
+    private GPA gpa;
+
+    public Student(String name, GPA gpa) {
+        this.name = name;
+        this.gpa = gpa;
+    }
+
+    public GPA getGPA() {
+        return gpa;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public boolean honorRoll(GPA gpa2) {
+        if(gpa.compareTo(gpa2) == -1)
+            return false;
+        else
+            return true;
+    }
+
+    public String toString() {
+        return name + gpa.getValue();
+    }
+}
+
+12.
+public static double[] bestInMonths(double[][] famCellBills) {
+    int famLength = famCellBills.length;
+    int monthLength = famCellBills[0].length;
+    double[] returnArray = new double[monthLength];
+    double monthMax = 0;
+    for(int monthNum = 0; monthNum < monthLength; monthNum++) {
+        monthMax = 0;
+        for(int famNum = 0; famNum < famLength; famNum++) {
+            if(famCellBills[famNum][monthNum] > monthMax) {
+                monthMax = famCellBills[famNum][monthNum];
+            }
+        }
+        returnArray[monthNum] = monthMax;
+    }
+    return returnArray;
+}
