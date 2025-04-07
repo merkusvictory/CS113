@@ -1,0 +1,175 @@
+Practice Test 1
+1. e /
+2. b /
+3. c /
+4. c /
+5. c /
+6. b /
+7. a /
+8. b /
+9. b /
+10. c x e
+
+11.
+public class Point
+{
+    private int x, y;
+    public Point(int x, int y)
+    {
+        this.x=x;
+        this.y=y;
+    }
+    public String toString()
+    {
+        return "x:"+x+","+"y:"+y;
+    }
+    public double distance(Point other)
+    {
+        return Math.sqrt(Math.pow(x-other.x,2)+Math.pow(y-other.y,2));
+    }
+}
+
+public class Circle
+{
+    private Point center;
+    private float radius;
+
+    public Circle(Point newCenter, float newRadius) {
+        center = newCenter;
+        radius = newRadius;
+    }
+
+    public Point getCenter() {
+        return center;
+    }
+
+    public void setRadius(float newRadius) {
+        radius = newRadius;
+    }
+
+    public boolean liesOnCircle(Point p1) {
+        double distance = center.distance(p1);
+        double circDistance = radius;
+        if(distance == circDistance)
+            return true;
+        return false;
+    }
+}
+
+import java.util.Scanner;
+public class CircleTest
+{
+    public static void main(String args[]) {
+        Scanner scan = new Scanner(System.in);
+        Circle[] circleArray = new Circle[50];
+        float radius;
+        int x;
+        int y;
+        Point point;
+
+        for(int i = 0; i < circleArray.length; i++) {
+            System.out.print("Enter radius: ");
+            radius = scan.nextFloat();
+            System.out.print("Enter x value of center: ");
+            x = scan.nextInt();
+            System.out.print("Enter y value of center: ");
+            y = scan.nextInt();
+            point = new Point(x,y);
+            circleArray[i] = new Circle(point, radius);
+        }
+
+        int count = 0;
+        Point pointZero = new Point(0, 0);
+        for(Circle circle : circleArray) {
+            if(circle.liesOnCircle(pointZero))
+                count++;
+        }
+        System.out.println(count);
+    }
+}
+
+Practice Test 2
+1. b /
+2. d /
+3. d /
+4. e /
+5. d /
+6. b /
+7. d /
+8. a /
+9. e /
+10. d /
+
+11.
+
+public class IntegerList {
+    private int[] list;
+
+    public IntegerList(int listSize) {
+        list = new int[listSize];
+    }
+
+    public int[] getList() {
+        return list;
+    }
+
+    public void setList(int[] list) {
+        this.list = list;
+    }
+
+    public void randomize() {
+        for(int i = 0; i < list.length; i++) {
+            list[i] = (int)Math.random()*100 + 1;
+        }
+    }
+
+    public String toString() {
+        String output = "";
+        for(int num : list) {
+            output += num + " ";
+        }
+        return output;
+    }
+
+    public int[] merge(int[] list2) {
+        int[] outputList = new int[list.length + list2.length];
+        for(int i = 0; i < list.length; i++) {
+            outputList[i] = list[i];
+        }
+        for(int i = list.length; i < outputList.length; i++) {
+            outputList[i] = list2[i-list.length];
+        }
+        return outputList;
+    }
+}
+
+12.
+import java.util.Scanner;
+public class Player {
+    private String name;
+    private int goals;
+    private int games;
+    
+    public Player(){
+        Scanner scan = new Scanner(System.in);
+        name = scan.nextLine();
+        goals = scan.nextInt();
+        games = scan.nextInt();
+    }
+    public double getAverage(){
+        return (games == 0 ? 0: goals/games);
+    }
+
+    public int topPlayers(Player[] team, double target) {
+        int count = 0;
+        for(Player player : team) {
+            if(player.getAverage() > target) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+
+
+Practice Test 3
