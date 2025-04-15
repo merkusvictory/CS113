@@ -24,6 +24,11 @@ public class Lecture9 {
         // class contents
     }
 
+    public abstract class Product
+    {
+
+    }
+
 }
 
 // RECURSION
@@ -57,3 +62,31 @@ public class Lecture9 {
 // Object - parent of all objects
 //        - has toString that returns the address
 //        - equals
+//        - clone
+
+// ABSTRACT CLASS
+// placeholder in a class hierarchy representing a generic concept
+// can not be instantiated
+// use modifier abstract on the class header to declare a class as abstract
+// can't create an object of this class
+// YOU CAN MAKE A SUBCLASS/CHILD CLASS FROM IT!!!!
+// classes containing abstract methods automatically become abstract themselves
+
+// childs of an abstract class must override the abstract methods, or it will also become abstract
+// abstract method can't be defined as final or static
+
+//  BINDING
+// java defers method binding until run time (dynamic/late binding)
+
+// POLYMORPHISM
+// having many forms
+// "polymorphic reference" - variable that can refer to different types of objects at diff points in time
+// all object references in java are potentially polymorphic
+// a parent reference can refer to a child related by inheritance
+// Holiday day;
+// day.celebrate();
+// day = new Christmas();
+// day.celebrate();
+// day is still of type Holiday
+// java looks at the type it was instantiated with to compile
+// to bypass the compiler, cast the reference (Christmas) day.getTree();
