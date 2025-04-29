@@ -90,3 +90,30 @@ public class Lecture9 {
 // day is still of type Holiday
 // java looks at the type it was instantiated with to compile
 // to bypass the compiler, cast the reference (Christmas) day.getTree();
+
+// INTERFACES
+// collection of abstract methods and constants
+// public interface Doable
+// {
+//    public void doThis();
+//    public int doThat();
+// }
+// represents a contract that existing classes can sign up to implement
+// classes can use these interfaces
+// public class CanDo implements Doable
+// {
+//    public void doThis()
+//    {
+//       whatever
+//    }
+// }
+// can implement multiple interfaces
+// java APi has the Comparable interface (containing compareTo) used in String
+// interface name can be used as an object's reference variable
+// can point to any object of any class implementing the Speaker interface
+// Speaker current = new Dog(); // speaker is implemented in dog
+// if current uses a method not in speaker contract, it will not compile
+
+// SORTING ALGORITHMS
+// selectionSort
+// generics (<text-here>)
