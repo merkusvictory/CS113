@@ -1,0 +1,191 @@
+Practice 1
+1. C /
+2. B /
+3. A /
+4. E /
+5. B /
+6. 1 1 not a number 1 /
+7. D x C
+8. E /
+9. D /
+10. E /
+
+11. 
+public class Cylinder extends Circle{
+    private double height;
+
+    public Cylinder(double r, double height) {
+        super(r);
+        this.height = height;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    public boolean equals(Cylinder c) {
+        return (height == c.getHeight() && radius == c.getRadius());
+    }
+    
+    public double area() {
+        return (2 * Math.PI * radius * radius) + (2 * Math.PI * radius * height);
+    }
+
+    public String toString() {
+        return "Cylinder with radius of " + radius + " and height of " + height;
+    }
+}
+
+12.
+public static int[] eStatistics(String[] names) {
+    int[] returnArray = new int[names.length];
+    String name;
+
+    for(int i = 0; i<names.length; i++) {
+        name = names[i];
+        returnArray[i] = 0;
+        for(int j = 0; j<name.length(); j++) {
+            if(name.charAt(j) == 'e') {
+                returnArray[i]++;
+            }
+        }
+    }
+
+    return returnArray;
+}
+
+Practice 2
+1. D /
+2. C /
+3. E /
+4. B /
+5. E /
+6. D /
+7. B x A
+8. D /
+9. D / 
+10. D /
+
+11. 
+private static int recProd(int[] array, int count) {
+    if(count <= 0) {
+        return 1;
+    }
+    else {
+        return recProd(array, count-1) * array[count-1];
+    }
+}
+
+12. 
+
+import java.util.Random;
+
+Random gen = new Random();
+
+public Course(int size) {
+    stdList = new Student[size];
+    stats = new int[10];
+
+    for(Student student : stdList) {
+        student = new Student(gen.nextInt(1, 101));
+        int finalScore = student.getFinalScore();
+        if(finalScore >= 90 && finalScore <= 100) {
+            stats[(finalScore-1)%10]++;
+        }
+
+    }
+}
+
+13.
+public class Line extends Figure {
+    Point p1;
+    Point p2;
+
+    public Line(Point p1, Point p2) {
+        this.p1 = p1;
+        this.p2 = p2;
+        super("Line");
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Point getPoint1() {
+        return p1;
+    }
+
+    public Point getPoint2() {
+        return p2;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPoint1(Point p1) {
+        this.p1 = p1;
+    }
+
+    public void setPoint2(Point p2) {
+        this.p2 = p2;
+    }
+
+    public double perimeter() {
+        return p1.distance(p2);
+    }
+
+    public boolean equals(Line line2) {
+        return this.perimeter() == line2.perimeter();
+    }
+
+    public String toString() {
+        return "line with vertices " + p1 + " and " + p2;
+    }
+}
+
+Practice 3
+1. D /
+2. C /
+3. B /
+4. D /
+5. D /
+6. B /
+7. E /
+8. B /
+9. B /
+10. B /
+
+11. 
+
+public static int[] testCoffeeDrinks(CoffeeDrink[] drinks) {
+    int[] coffeeStrengths = new int[5];
+    int strongestIndex = 0;
+    Ingredient coffee, milk;
+
+    for(int i = 0; i < drinks.length; i++) {
+        coffee = drinks[i].getIngred1();
+        milk = drinks[i].getIngred2();
+        coffeeStrengths[coffee.getStrength() - 1]++;
+        if(drinks[i].compareTo(drinks[strongestIndex]) < 0)
+            strongestIndex = i;
+    }
+
+    System.out.println(drinks[strongestIndex]);
+
+    return coffeeStrengths;
+}
+
+12.
+public static boolean checkString(String s) {
+    if(s.length() == 1)
+        return true;
+    else
+        return checkString(s.substring(0, s.length() - 1) && (s.charAt(s.length()) == s.charAt(0)));
+}
+
+
